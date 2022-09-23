@@ -13,7 +13,7 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  caption: {
+  description: {
     type: String,
     required: true,
   },
@@ -28,6 +28,18 @@ const PostSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  petName: {
+    type: String,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  breed: {
+    type: String,
+    required: true
   },
 });
 

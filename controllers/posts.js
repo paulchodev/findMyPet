@@ -22,7 +22,7 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      const comments = await Comment.find().sort({ createdAt: "desc" }).lean();
+      const comments = await Comment.find().sort({ createdAt: "asc" }).lean();
       res.render("post.ejs", { post: post, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
@@ -37,9 +37,12 @@ module.exports = {
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: req.body.caption,
+        description: req.body.description,
         likes: 0,
         user: req.user.id,
+        petName: req.body.petName,
+        breed: req.body.breed,
+        location: req.body.location,
       });
       console.log("Post has been added!");
       res.redirect("/profile");
