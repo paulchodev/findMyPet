@@ -19,6 +19,14 @@ module.exports = {
       console.log(err);
     }
   },
+  newPost: async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      res.render("newPost.ejs", { posts: posts, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
@@ -43,6 +51,7 @@ module.exports = {
         petName: req.body.petName,
         breed: req.body.breed,
         location: req.body.location,
+        gender: req.body.gender
       });
       console.log("Post has been added!");
       res.redirect("/profile");

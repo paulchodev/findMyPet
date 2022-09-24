@@ -1,0 +1,52 @@
+<%- include('partials/header') -%>
+<div class="mt-5 container">
+    <h2 class="text-xl">Add a post</h2>
+    <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+      <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title">
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Pet's Name</label>
+        <input type="text" class="form-control" id="petName" name="petName">
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Breed</label>
+        <input type="text" class="form-control" id="breed" name="breed">
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="gender" name="gender">
+      </div>
+      <div class="mb-3">
+        <label for="caption" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Last Known Location</label>
+        <input type="text" class="form-control" id="location" name="location">
+      </div>
+        <div id="map"></div>
+        <script>
+            function initMap(){
+                var options ={
+                    zoom:10,
+                    center: {lat:34.0522,lng:-118.2437}
+                }
+                var map = new
+                google.maps.Map(document.getElementById('map'),options)
+            }
+        </script>
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUsPp6Gbg7O-ypiBr6_-W9BCBWHgBmBA4&callback=initMap">
+        </script>
+      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13160.454225440715!2d-118.47471695000002!3d34.4492652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1663976900388!5m2!1sen!2sus" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+      <div class="mb-3">
+        <label for="imgUpload" class="form-label">Image</label>
+        <input type="file" class="form-control" id="imageUpload" name="file">
+      </div>
+      <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer') -%>
