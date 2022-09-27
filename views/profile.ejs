@@ -1,19 +1,45 @@
 <%- include('partials/header') -%>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+          <a class="navbar-brand"href="/profile">
+              <img src="imgs/logo.png" alt="logo" >
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <a href="/feed" class="px-4">Feed</a>  
+              <a href="/profile" class="px-4">My Posts</a>
+              <a href="/newPost" class="px-4">New Post</a>
+              <a href="/logout" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-3 rounded">Logout</a>
+          </div>
+      </div>
+  </nav>
+</div>
+<!-- <div class="container py-5">
+  <ul class="d-flex flex-row-reverse">
+    <li class="col-1"><a href="/logout" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded">Logout</a></li>
+    <li class="col-1"><a href="/newPost">New Post</a></li>
+    <li class="col-1"><a href="/profile">My Posts</a></li>
+    <li class="col-1"><a href="/feed">Feed</a></li>
+  <p class="col-2"><strong>Welcome,  </strong> <%= user.userName %></p>
+</ul>
+</div> -->
+
 <div class="container">
   <div class="row mt-5">
       <div class="col-6">
           <div>
-              <p><strong>Welcome</strong> <%= user.userName %></p>
-              <p><strong>Email</strong> <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              <!-- <p><strong>Email</strong> <%= user.email %></p> -->
           </div>
-      <div class="col-6">
-        <h2 class="text-xl">My Posts</h2>
+      <div class="col-6 py-5">
+        <h2 class="text-3xl font-bold">My Posts</h2>
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
+              <img class="img-thumbnail" src="<%= posts[i].image%>">
             </a>
           </li>
         <% } %>

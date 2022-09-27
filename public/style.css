@@ -92,8 +92,8 @@ h3,
 h4,
 h5,
 h6 {
-  /* font-size: inherit;
-  font-weight: inherit; */
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 /*
@@ -101,7 +101,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 */
 
 a {
-  /* color: inherit; */
+  color: inherit;
   text-decoration: inherit;
 }
 
@@ -221,7 +221,7 @@ button,
   /* 1 */
   /* background-color: transparent; */
   /* 2 */
-  background-image: none;
+  /* background-image: none; */
   /* 2 */
 }
 
@@ -551,7 +551,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-#map{
-    height: 400px;
-    width: 100%;
+#nav{
+  list-style: none;
+  position: fixed;
 }

@@ -1,7 +1,26 @@
 <%- include('partials/header') -%>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column py-5">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+          <a class="navbar-brand"href="/profile">
+              <img src="/imgs/logo.png" alt="logo" >
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <a href="/feed" class="px-4">Feed</a>  
+              <a href="/profile" class="px-4">Profile</a>
+              <a href="/newPost" class="px-4">New Post</a>
+              <a href="/logout" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-3 rounded">Logout</a>
+          </div>
+      </div>
+  </nav>
+</div>
 <div class="container">
   <div class="row justify-content-center mt-5">
-    <div class="col-6">
+    
+    <div class="col-6 text-3xl font-bold">
       <h2><%= post.title %></h2>
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row justify-content-between">
@@ -10,7 +29,7 @@
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded fa fa-heart" type="submit"></button>
         </form>
         <h3 class="col-3">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %>
@@ -19,7 +38,7 @@
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded fa fa-trash" type="submit"></button>
         </form>
         <%}%>
       </div>
@@ -46,27 +65,27 @@
             <label for="title" class="form-label"></label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded">Submit</button>
       </form>
     </div>
+</div>
+  
     <ul>
       <div class="container">
+        <div class="row">
           <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-        <%= comments[i].createdBy%> says: "<%= comments[i].comment%>"
-        <%if(comments[i].createdById == user.id) {%>
-          <form action="/comment/deleteComment/<%= post.id %>/<%= comments[i]._id %>?_method=DELETE" method="POST">
-          <button class="btn btn-outline-danger" type="submit">Delete</button>
-          </form>
-        <%}%>
-        </li>
+            <li class="col-6 justify-content-between mt-5">
+            <%= comments[i].createdBy%> says: "<%= comments[i].comment%>"
+            <%if(comments[i].createdById == user.id) {%>
+              <form action="/comment/deleteComment/<%= post.id %>/<%= comments[i]._id %>?_method=DELETE" method="POST">
+              <button class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded" type="submit">Delete</button>
+              </form>
+            <%}%>
+            </li>
+            </div>
+          <% } %>
         </div>
-      <% } %>
     </ul>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
-    </div>
   </div>
 </div>
 
