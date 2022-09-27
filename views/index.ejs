@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffff">
         <div class="container">
             <a class="navbar-brand"href="/">
                 <img src="imgs/logo.png" alt="logo" >
@@ -16,59 +16,80 @@
     </nav>
 </div>
 
-
-<!-- <a href=""><img src="../imgs/logo.png" alt="logo" class="px-5"></a>
-<div class="container ">
-  <div>
-    <div class="d-flex flex-row-reverse">
-    <a href="/signup" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded ">Signup</a>
-    <a href="/login" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded mr-3">Login</a>
+<!-- <div class="container-fluid pt-3">
+    <div class="card-columns">
+    <div class="card">
+    <img class="card-img-top" style="width:100px; height: 200px;"/>
     </div>
-  </div> -->
-
-  
-<!-- <main class="container">
-    <div class="row justify-content-center">
-      <section class="col-6 mt-5">
-        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-        <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-        messages.info.forEach( el => { %>
-        <div class="alert alert-info"><%= el.msg %></div>
-        <% }) %> <% } %>
-        <form action="/login" method="POST">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              name="email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              name="password"
-            />
-          </div>
-          <div class="container">
-            <div class="d-flex justify-content-between">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded">Submit</button>
-            <a href="/signup" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded"> Signup</a>
-          </div>
-          </div>
-        </form>
-      </section>
+    <div class="card">
+    <img class="card-img-top" style="width:100px; height: 500px;"/>
     </div>
-  </main> -->
+    <div class="card">
+    <img class="card-img-top" style="width:100px; height: 300px;"/>
+    </div>
+    <div class="card">
+    <img class="card-img-top" style="width:100px; height: 400px;"/>
+    </div>
+    <div class="card">
+    <img class="card-img-top" style="width:100px; height: 400px;"/>
+    </div>
+    <div class="card">
+    <img class="card-img-top" style="width:100px; height: 300px;"/>
+    </div>
+    </div>
+</div>
+</div> -->
 
-    
+<!-- <div class="row">
+    <div class="col-3">
+     <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Lights" >
+     <img src="https://www.w3schools.com/w3images/falls2.jpg" alt="Lights" >
+     <img src="https://www.w3schools.com//w3images/wedding.jpg"alt="Lights" >
+    </div>
+    <div class="col-3">
+     <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Lights" >
+     <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Lights" >
+    </div>
+    </div> -->
 
+    <!-- <div class="container">
+        <div class="row">
+            <img class="col-2 pt-5 " src="/imgs/image1.jpg" alt="dog">
+            <img class="col-3 pt-5 " src="/imgs/image2.jpg" alt="dog">
+            <img class="col-2 pt-5 " src="/imgs/image3.jpg" alt="cat">
+        </div>
+        <div class="">
+            <h1 class="float-right " >Lost your pet?</h1>
+            <p class="p-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nam necessitatibus qui. </p>
+        </div>
+        <div class="row">
+            <img class="col-3 " src="/imgs/image4.jpg" alt="dog">
+            <img class="col-2 " src="/imgs/image5.jpg" alt="dog">
+            <img class="col-2 " src="/imgs/image6.jpg" alt="dog">
+        </div>
+        
+    </div> -->
+
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <div class="row">
+                <img class="col-2 pt-5 " src="/imgs/image1.jpg" alt="dog">
+                <img class="col-3 pt-5 " src="/imgs/image2.jpg" alt="dog">
+                <img class="col-2 pt-5 " src="/imgs/image3.jpg" alt="cat">
+            </div>
+            <div class="row">
+                <img class="col-3 pt-3" src="/imgs/image4.jpg" alt="dog">
+                <img class="col-2 pt-3" src="/imgs/image5.jpg" alt="dog">
+                <img class="col-2 pt-3" src="/imgs/image6.jpg" alt="dog">
+            </div>
+        </div>
+        <div class="col-lg-6 text-right">
+            <h1 class="display-5 fw-bold 1h-1 mb-3">Lost your Pet?</h1>
+            <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>  Deleniti eligendi asperiores ipsum voluptatum <br> sit molestias aut architecto optio quaerat facere.</p>
+            <div class="d-flex justify-content-end">
+               <a class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-3 mt-3 rounded" href="/signup" type="button">Signup with E-mail</a> 
+            </div>
+            
+        </div>
+    </div>
 <%- include('partials/footer') -%>

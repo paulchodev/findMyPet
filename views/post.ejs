@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column py-5">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffff">
       <div class="container">
           <a class="navbar-brand"href="/profile">
               <img src="/imgs/logo.png" alt="logo" >
@@ -10,7 +10,7 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
               <a href="/feed" class="px-4">Feed</a>  
-              <a href="/profile" class="px-4">Profile</a>
+              <a href="/profile" class="px-4">My Posts</a>
               <a href="/newPost" class="px-4">New Post</a>
               <a href="/logout" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-3 rounded">Logout</a>
           </div>
@@ -20,16 +20,16 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     
-    <div class="col-6 text-3xl font-bold">
+    <div class="col-6 text-3xl font-bold ">
       <h2><%= post.title %></h2>
       <img class="img-fluid" src="<%= post.image%>" />
-      <div class="row justify-content-between">
+      <div class="row justify-content-between ">
         <form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded fa fa-heart" type="submit"></button>
+          <button class="bg-pink-500 hover:bg-pink-400 text-white py-1 px-2 rounded fa fa-heart" type="submit"></button>
         </form>
         <h3 class="col-3">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %>
@@ -38,43 +38,46 @@
           method="POST"
           class="col-3"
         >
-          <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-3 rounded fa fa-trash" type="submit"></button>
+          <button class="bg-gray-500 hover:bg-gray-400 text-white py-1 px-2 rounded fa fa-trash" type="submit"></button>
         </form>
         <%}%>
       </div>
     </div>
-    <div>
-      <p>Name: <%= post.petName %></p>
+    <div class="col-md-6 border border rounded text-center mt-5 mb-5">
+      <div>
+        <h3 class="text-3xl">Name: <%= post.petName %></h3>
+      </div>
+      <div>
+        <p class="text-xl">Breed: <%= post.breed %></p>
+      </div>
+      <div>
+        <p class="text-xl">Gender: <%= post.gender %></p>
+      </div>
+      <div>
+        <p class="text-xl">Last Known Location: <%= post.location %></p>
+      </div>
+      <div>
+        <p class="text-xl">Description: <%= post.description %></p>
+      </div>
     </div>
-    <div>
-      <p>Breed: <%= post.breed %></p>
-    </div>
-    <div>
-      <p>Gender: <%= post.gender %></p>
-    </div>
-    <div>
-      <p>Last Known Location: <%= post.location %></p>
-    </div>
-    <div>
-      <p>Description: <%= post.description %></p>
-    </div>
-    <div class="mt-5">
+    
+    <div class="mt-5 container">
       <h2>Add a comment</h2>
       <form action="/comment/createComment/<%= post._id%>" method="POST">
         <div class="mb-3">
             <label for="title" class="form-label"></label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded">Submit</button>
+        <button type="submit" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">Submit</button>
       </form>
     </div>
 </div>
   
     <ul>
       <div class="container">
-        <div class="row">
+        <div class="row ">
           <% for(var i=0; i<comments.length; i++) {%>
-            <li class="col-6 justify-content-between mt-5">
+            <li class="col-6 mt-5 d-flex justify-content-between border border-3 rounded">
             <%= comments[i].createdBy%> says: "<%= comments[i].comment%>"
             <%if(comments[i].createdById == user.id) {%>
               <form action="/comment/deleteComment/<%= post.id %>/<%= comments[i]._id %>?_method=DELETE" method="POST">

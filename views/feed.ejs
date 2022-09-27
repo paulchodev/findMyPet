@@ -10,7 +10,7 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
               <a href="/feed" class="px-4">Feed</a>  
-              <a href="/profile" class="px-4">Profile</a>
+              <a href="/profile" class="px-4">My Posts</a>
               <a href="/newPost" class="px-4">New Post</a>
               <a href="/logout" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-3 rounded">Logout</a>
           </div>
@@ -27,18 +27,13 @@
             <div class="card h-100">
               <li class="">
               <a href="/post/<%= posts[i]._id%>">
-              <img class="card-img-top" src="<%= posts[i].image%>" style="height: 15rem">
+              <img class="card-img-top" src="<%= posts[i].image%>" style="height: 12rem" >
               </a>
               </li>
               <div class="card-body">
                 <h5 class="card-title">
                   <%= posts[i].title %>
                 </h5>
-                <script>
-                  const m = moment();
-                  const m2 = moment(posts[i].createdAt)
-                
-                </script>
               </div>
             </div>
           </div>
