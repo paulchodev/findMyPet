@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column py-5">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background-color: #ffff">
       <div class="container">
           <a class="navbar-brand"href="/profile">
               <img src="imgs/logo.png" alt="logo" >
@@ -12,28 +12,34 @@
               <a href="/feed" class="px-4">Feed</a>  
               <a href="/profile" class="px-4">My Posts</a>
               <a href="/newPost" class="px-4">New Post</a>
-              <a href="/logout" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-3 rounded">Logout</a>
+              <a href="/logout" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-3 rounded">Logout</a>
           </div>
       </div>
   </nav>
 </div>
   <div class="container card-container py-5">
-    <h1 class="text-3xl font-bold">Lost Pets</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+    <h1 class="text-3xl font-bold pt-5">Lost & Found Pets</h1>
+    <div class="row w-100 p-3 ">
+    <div class="row mt-5">
+      <ul class="row list-unstyled ">
         <% for(var i=0; i<posts.length; i++) {%>
-          <div class="col">
-            <div class="card h-100">
+          <div class="col-sm-3 mt-5">
+            <div class="card h-100 " style=" width:15rem">
               <li class="">
               <a href="/post/<%= posts[i]._id%>">
-              <img class="card-img-top" src="<%= posts[i].image%>" style="height: 12rem" >
+              <img class="card-img-top " src="<%= posts[i].image%>" style="height: 200px; width:300px" >
               </a>
               </li>
               <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title font-bold">
                   <%= posts[i].title %>
                 </h5>
+                <h6 class="card-text text-sm">
+                  <%= posts[i].city %>, <%= posts[i].state %>
+                </h6>
+                <h6 class="card-text text-sm mt-2">
+                  Posted by <%= posts[i].createdBy %>
+                </h6>
               </div>
             </div>
           </div>

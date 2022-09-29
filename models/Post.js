@@ -25,6 +25,7 @@ const PostSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  
   createdAt: {
     type: Date,
     default: Date.now,
@@ -44,6 +45,18 @@ const PostSchema = new mongoose.Schema({
   gender: {
     type: String,
     required: true
+  },
+  city: {
+    type: String,
+    required :true
+  },
+  state: {
+    type: String,
+    required :true
+  },
+  createdBy:{
+    type: String,
+    ref: "User"
   },
 });
 

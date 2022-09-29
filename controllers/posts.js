@@ -52,7 +52,10 @@ module.exports = {
         petName: req.body.petName,
         breed: req.body.breed,
         location: req.body.location,
-        gender: req.body.gender
+        gender: req.body.gender,
+        city: req.body.city,
+        state: req.body.state,
+        createdBy: req.user.userName,
       });
       console.log("Post has been added!");
       res.redirect("/profile");

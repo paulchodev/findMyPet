@@ -1,95 +1,48 @@
 <%- include('partials/header') -%>
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffff">
-        <div class="container">
-            <a class="navbar-brand"href="/">
-                <img src="imgs/logo.png" alt="logo" >
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <a class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-3 rounded mr-3" href="/login">Login</a>
-                <a class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-3 rounded " href="/signup">Signup</a>
+<div class="d-flex h-100s">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffff">
+            <div class="container">
+                <a class="navbar-brand"href="/">
+                    <img src="imgs/logo.png" alt="logo" >
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <a class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-3 rounded mr-3" href="/login">Login</a>
+                    <a class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-3 rounded " href="/signup">Signup</a>
+                </div>
             </div>
-        </div>
-    </nav>
-</div>
-
-<!-- <div class="container-fluid pt-3">
-    <div class="card-columns">
-    <div class="card">
-    <img class="card-img-top" style="width:100px; height: 200px;"/>
+        </nav>
     </div>
-    <div class="card">
-    <img class="card-img-top" style="width:100px; height: 500px;"/>
-    </div>
-    <div class="card">
-    <img class="card-img-top" style="width:100px; height: 300px;"/>
-    </div>
-    <div class="card">
-    <img class="card-img-top" style="width:100px; height: 400px;"/>
-    </div>
-    <div class="card">
-    <img class="card-img-top" style="width:100px; height: 400px;"/>
-    </div>
-    <div class="card">
-    <img class="card-img-top" style="width:100px; height: 300px;"/>
-    </div>
-    </div>
-</div>
-</div> -->
-
-<!-- <div class="row">
-    <div class="col-3">
-     <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Lights" >
-     <img src="https://www.w3schools.com/w3images/falls2.jpg" alt="Lights" >
-     <img src="https://www.w3schools.com//w3images/wedding.jpg"alt="Lights" >
-    </div>
-    <div class="col-3">
-     <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Lights" >
-     <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Lights" >
-    </div>
-    </div> -->
-
-    <!-- <div class="container">
-        <div class="row">
-            <img class="col-2 pt-5 " src="/imgs/image1.jpg" alt="dog">
-            <img class="col-3 pt-5 " src="/imgs/image2.jpg" alt="dog">
-            <img class="col-2 pt-5 " src="/imgs/image3.jpg" alt="cat">
-        </div>
+    <div class=" ">
         <div class="">
-            <h1 class="float-right " >Lost your pet?</h1>
-            <p class="p-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nam necessitatibus qui. </p>
-        </div>
-        <div class="row">
-            <img class="col-3 " src="/imgs/image4.jpg" alt="dog">
-            <img class="col-2 " src="/imgs/image5.jpg" alt="dog">
-            <img class="col-2 " src="/imgs/image6.jpg" alt="dog">
-        </div>
-        
-    </div> -->
-
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
-            <div class="row">
-                <img class="col-2 pt-5 " src="/imgs/image1.jpg" alt="dog">
-                <img class="col-3 pt-5 " src="/imgs/image2.jpg" alt="dog">
-                <img class="col-2 pt-5 " src="/imgs/image3.jpg" alt="cat">
+            <div class="parent-container d-flex flex-column3 ">
+                <div class="container-fluid mt-5 pt-5 ">
+                    <div class="row">
+                        <img class="col-3 pt-5 " src="/imgs/image1.jpg" alt="dog">
+                        <img class="col-4 pt-5 " src="/imgs/image2.jpg" alt="dog">
+                        <img class="col-3 pt-5 " src="/imgs/image3.jpg" alt="cat">
+                    </div>
+                    <div class="row">
+                        <img class="col-4 pt-3" src="/imgs/image4.jpg" alt="dog">
+                        <img class="col-3 pt-3" src="/imgs/image5.jpg" alt="dog">
+                        <img class="col-3 pt-3" src="/imgs/image6.jpg" alt="dog">
+                    </div>
+                </div>
+                <div class="container-fluid mt-5 pt-5">
+                    <div class="row ">
+                        <h1 class="text-5xl font-bold mt-5 pt-5">Lost your pet?</h1>
+                        <p class="text-xl mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>  Deleniti eligendi asperiores ipsum voluptatum <br> sit molestias aut architecto optio quaerat facere.</p>
+                        <div class="d-grip gap-2 d-md-flex justify-content-md-start">
+                            <a class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-3 mt-3 rounded" href="/signup" type="button">Signup with E-mail</a> 
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <img class="col-3 pt-3" src="/imgs/image4.jpg" alt="dog">
-                <img class="col-2 pt-3" src="/imgs/image5.jpg" alt="dog">
-                <img class="col-2 pt-3" src="/imgs/image6.jpg" alt="dog">
-            </div>
-        </div>
-        <div class="col-lg-6 text-right">
-            <h1 class="display-5 fw-bold 1h-1 mb-3">Lost your Pet?</h1>
-            <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>  Deleniti eligendi asperiores ipsum voluptatum <br> sit molestias aut architecto optio quaerat facere.</p>
-            <div class="d-flex justify-content-end">
-               <a class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-3 mt-3 rounded" href="/signup" type="button">Signup with E-mail</a> 
-            </div>
-            
         </div>
     </div>
+</div>
+       
 <%- include('partials/footer') -%>
