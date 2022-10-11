@@ -19,11 +19,10 @@
 </div>
 <div class="container">
   <div class="row justify-content-center mt-5">
-    
     <div class="col-6 text-3xl font-bold ">
       <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" style="height:720px; width:720px" />
-      <div class="row justify-content-around ">
+      <img class="img-fluid mt-3" src="<%= post.image%>" style="height:720px; width:720px" />
+      <div class="row justify-content-start mt-3">
         <form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -31,7 +30,6 @@
         >
           <button class="bg-orange-500 hover:bg-orange-400 text-white py-1 px-2 rounded fa fa-heart" type="submit"></button>
         </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
@@ -42,6 +40,7 @@
         </form>
         <%}%>
       </div>
+      <h3 class="col-3 mt-2">Likes: <%= post.likes %></h3>
     </div>
     <div class="col-md-6 border border-3 rounded text-center mt-5 mb-5">
       <div>
@@ -63,7 +62,7 @@
         <p class="text-xl mt-3">Description: <%= post.description %></p>
       </div>
       <div>
-        <p class="text-xl mt-3">Posted on: <%= post.createdAt %></p>
+        <p class="text-xl mt-3">Posted: <%= moment(post.createdAt).fromNow() %></p>
       </div>
     </div>
     
@@ -83,7 +82,7 @@
         <% for(var i=0; i<comments.length; i++) {%>
           <div class="container">
             <div class="row ">
-            <li class="col-6 mt-5 d-flex justify-content-between border border-3 rounded">
+            <li class="col-6 mt-5 d-flex justify-content-between border border-1 rounded">
             <%= comments[i].createdBy%> <br> "<%= comments[i].comment%>"
             <%if(comments[i].createdById == user.id) {%>
               <form action="/comment/deleteComment/<%= post.id %>/<%= comments[i]._id %>?_method=DELETE" method="POST">
