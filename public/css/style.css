@@ -29,3 +29,55 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
+
+.btn {
+    margin-right: 1rem;
+    color: #183a1d
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.fa-heart {
+    background-color: rgb(255, 93, 120);
+}
+
+.fa-trash {
+    background-color: gray;
+    margin-left: 2rem;
+}
+
+.border-dark {
+    margin-top: 4rem;
+    margin-bottom: 6rem
+}
+
+.footer {
+    font-size: small;
+}
+
+.footer > a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #e1eedd;
+}
+
+h1 {
+    color: #183a1d;
+}
+
+.card-text, .card-title{
+    color: #183a1d;
+}
+
+div > .mt-5 .container {
+    margin-left: 6rem;
+}
+
+ul > .container {
+    margin-left: 2.5rem;
+}
